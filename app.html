@@ -1,0 +1,275 @@
+<form onsubmit="event.preventDefault();" id="tab" name="first" class="frms">
+    <div id="showdiv">
+      <div>
+        <div align ="right">
+          <h2>متى سوف تلدين؟</h2>
+          <h6>احسبي موعد الولادة المرتقب لحملك وشاهدي كيف يتطور جنينك الان!</h6>
+          <h4>تاريخ أول يوم لآخر دورة شهرية</h4>
+        </div>
+  
+        <div class="parnt-dd">
+          <div class="group_con">
+            <!-- // selector for days of month  -->
+            <select name="len11"> 
+              <option name="0" value="0">اليوم</option>
+              <option name="1" value="1">1</option>
+              <option name="2" value="2">2</option>
+              <option name="3" value="3">3</option>
+              <option name="4" value="4">4</option>
+              <option name="5" value="5">5</option>
+              <option name="6" value="6">6</option>
+              <option name="7" value="7">7</option>
+              <option name="8" value="8">8</option>
+              <option name="9" value="9">9</option>
+              <option name="10" value="10">10</option>
+              <option name="11" value="11">11</option>
+              <option name="12" value="12">12</option>
+              <option name="13" value="13">13</option>
+              <option name="14" value="14">14</option>
+              <option name="15" value="15">15</option>
+              <option name="16" value="16">16</option>
+              <option name="17" value="17">17</option>
+              <option name="18" value="18">18</option>
+              <option name="19" value="19">19</option>
+              <option name="20" value="20">20</option>
+              <option name="21" value="21">21</option>
+              <option name="22" value="22">22</option>
+              <option name="23" value="23">23</option>
+              <option name="24" value="24">24</option>
+              <option name="25" value="25">25</option>
+              <option name="26" value="26">26</option>
+              <option name="27" value="27">27</option>
+              <option name="28" value="28">28</option>
+              <option name="29" value="29">29</option>
+              <option name="30" value="30">30</option>
+              <option name="31" value="31">31</option>
+            </select>
+          </div>
+  
+          <div class="group_con">
+            <select name="len12">
+                <!-- // selector of months's name  -->
+              <option name="0" value="0">الشهر</option>
+              <option name="1" value="1">يناير</option>
+              <option name="2" value="2">فبراير</option>
+              <option name="3" value="3">مارس</option>
+              <option name="4" value="4">ابريل</option>
+              <option name="5" value="5">مايو</option>
+              <option name="6" value="6">يونيو</option>
+              <option name="7" value="7">يوليو</option>
+              <option name="8" value="8">أغسطس</option>
+              <option name="9" value="9">سبتمبر</option>
+              <option name="10" value="10">أكتوبر</option>
+              <option name="11" value="11">نوفمبر</option>
+              <option name="12" value="12">ديسمبر</option>
+            </select>
+          </div>
+  
+          <div class="group_con">
+            <select name="len13">
+                <!-- // selector for years -->
+              <option name="0" value="0">السنه</option>
+              <option name="2020" value="2020">2020</option>
+              <option name="2021" value="2021">2021</option>
+              <option name="2021" value="2022">2022</option>
+            </select>
+          </div>
+  
+          <div class="group_con">
+            <div align="center">
+                <!-- button to do the action with showing resulte  -->
+              <input type="button" name="cc" value="احسبى" onClick="calc()" />
+              <!-- <input type="reset" value="Reset"> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <p id="alerttt"></p>
+    </div>
+  
+    <div id="hidedive">
+      <div class="resultess">
+        <h6>
+          موعد الولادة المتوقع
+          <br />
+          <span id="dueDatex"> </span>
+        </h6>
+      </div>
+  
+      <p class="now">
+        أسبوع الحمل الحالي:
+        <br />
+        <span class="now"> الأسبوع </span> <span id="dueweakly"> </span>
+      </p>
+  
+      <div class="reultes" id="reultes">
+        <span
+          ><input
+            type="text"
+            readonly
+            class="tbox"
+            name="fd1"
+            id="cd"
+            style="float: left"
+        /></span>
+        <span class="new" id="cd"> </span>
+        <span id="cd"
+          ><input type="text" readonly class="tbox" name="fd2" id="cd" />
+        </span>
+        <div>
+          <label class="leftt" id="cd"> الثلث الأول من الحمل </label>
+          <input type="text" readonly name="cd" id="cd" />
+        </div>
+        <div>
+          <label class="leftt" id="cd">الثلث الثاني من الحمل</label>
+          <input type="text" readonly name="fte" id="cd" />
+        </div>
+  
+        <table>
+          <tbody>
+            <tr>
+              <td>الثلث الأول من الحمل</td>
+              <td><p id="cddds"></p></td>
+            </tr>
+            <tr>
+              <td>الثلث الثاني من الحمل</td>
+              <td><p id="ftexx"></p></td>
+            </tr>
+  
+            <tr>
+              <td>الثلث الثالث من الحمل</td>
+              <td><span id="thrid"> </span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </form>
+  
+  <script>
+    var dueDatex = document.getElementById("dueDatex");
+    var dueweakly = document.getElementById("dueweakly");
+    var thrid = document.getElementById("thrid");
+    document.getElementById("hidedive").style.display = "none";
+  
+    function calc(e) {
+      var day = document.first.len11.value;
+      var mon = document.first.len12.value;
+      var year = document.first.len13.value;
+      var ylen = year.length;
+      if (day == 0 || mon == 0 || year == 0) {
+        var alerttt = document.getElementById("alerttt");
+        alerttt.innerHTML = "*من فضلك ادخال بيانات صحيحه";
+        // alert("invalid input");
+        return 0;
+      }
+      var d = new Array(
+        "الأحد",
+        "الأثنين",
+        "الثلاثاء",
+        "الأربعاء",
+        "الخميس",
+        "الجمعه",
+        "السبت"
+      );
+      var m = new Array(
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12"
+      );
+      var curd = new Date(year, mon - 1, day);
+      ////
+      const date2 = new Date();
+      const diffTime = Math.abs(curd - date2);
+      //this for days //
+      const diffDays = diffTime / (1000 * 60 * 60 * 24);
+      const monthly = diffDays / 7;
+      const weekleys = Math.floor(monthly);
+      dueweakly.innerHTML = weekleys;
+      if (weekleys >= 42) {
+        dueweakly.innerHTML = "لقد تمت الولادة بالفعل";
+      }
+  
+  
+     
+      document.getElementById("hidedive").style.display = "block";
+  
+      document.getElementById("showdiv").style.display = "none";
+  
+      let elgnen = document.getElementById("elgnen");
+      document.getElementById("elgnen").style.display = "block";
+  
+      var res2 = curd.getMonth();
+      var res = new Date();
+      var diff =
+        Date.UTC(res.getFullYear(), res.getMonth() - 1, res.getDay(), 0, 0, 0) -
+        Date.UTC(curd.getFullYear(), curd.getMonth() - 1, curd.getDay(), 0, 0, 0);
+      var secleft = diff / 1000 / 60;
+      var hrsleft = secleft / 60;
+      var daysleft = hrsleft / 24;
+  
+      //if(res2 == (mon-1) && daysleft < 300 && year!="")
+      var fd1 = new Date(year, mon - 1, parseInt(day) + 10);
+      document.first.fd1.value =
+        d[fd1.getDay()] +
+        ", " +
+        m[fd1.getMonth()] +
+        " " +
+        fd1.getDate() +
+        ", " +
+        fd1.getFullYear();
+      var fd2 = new Date(year, mon - 1, parseInt(day) + 20);
+      document.first.fd2.value =
+        d[fd2.getDay()] +
+        ", " +
+        m[fd2.getMonth()] +
+        " " +
+        fd2.getDate() +
+        ", " +
+        fd2.getFullYear();
+      var cd = new Date(year, mon - 1, parseInt(day) + 14);
+      var cddds = document.getElementById("cddds");
+      cddds.innerHTML =
+        cd.getFullYear() + " / " + m[cd.getMonth()] + " / " + cd.getDate();
+  
+      var fte = new Date(year, mon - 1, parseInt(day) + 84);
+      var ftexx = document.getElementById("ftexx");
+      ftexx.innerHTML =
+        fte.getFullYear() + " / " + m[fte.getMonth()] + " / " + fte.getDate();
+  
+      var ste = new Date(year, mon - 1, parseInt(day) + 189);
+      thrid.innerHTML =
+        ste.getFullYear() + " / " + m[ste.getMonth()] + " / " + ste.getDate();
+  
+      var dd = new Date(year, mon - 1, parseInt(day) + 280);
+      dueDatex.innerHTML =
+        d[dd.getDay()] +
+        " <br> " +
+        dd.getFullYear() +
+        " / " +
+        m[dd.getMonth()] +
+        " / " +
+        dd.getDate();
+  
+      document.first.dd.value =
+        d[dd.getDay()] +
+        ", " +
+        m[dd.getMonth()] +
+        " " +
+        dd.getDate() +
+        ", " +
+        dd.getFullYear();
+    }
+  
+  
+  </script>
+  
